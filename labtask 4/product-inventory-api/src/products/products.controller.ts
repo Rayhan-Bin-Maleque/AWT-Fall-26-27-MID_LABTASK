@@ -10,12 +10,12 @@ import { PartialUpdateProductDto } from './dto/partial-update-prpduct.dto.js';
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
-  @Post('products')
+  @Post('create-products')
   async create(@Body() product: CreateProductDto): Promise<products | string> {
     return await this.productsService.create(product);
   }
 
-  @Get('products')
+  @Get()
   async findAll(): Promise<products[] | string> {
     return await this.productsService.findAll();
   }
